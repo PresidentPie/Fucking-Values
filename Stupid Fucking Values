@@ -1,0 +1,322 @@
+	local Pryorite = Instance.new("IntValue")
+	Pryorite.Name = "Pryorite"
+	Pryorite.Parent = leaderstats
+	
+	local saberColor = Instance.new("Color3Value")
+	saberColor.Name = "SaberColor"
+	saberColor.Parent = player
+	
+	local Hilt = Instance.new("StringValue")
+	Hilt.Parent = player
+	Hilt.Name = "Hilt"
+	
+	local Pommel = Instance.new("StringValue")
+	Pommel.Parent = player
+	Pommel.Name = "Pommel"
+	
+	local Emitter = Instance.new("StringValue")
+	Emitter.Parent = player
+	Emitter.Name = "Emitter"
+	
+	local saber = Instance.new("Folder")
+	saber.Parent = player
+	saber.Name = "Saber"
+	
+	local Inventory = Instance.new("Folder") --Re-purposed for security reasons
+	Inventory.Parent = game.ServerStorage
+	Inventory.Name = (player.Name.."Inv")
+	
+	local invCount = Instance.new("IntValue") --Re-purposed for security reasons
+	invCount.Parent = Inventory
+	invCount.Name = "invCount"
+	invCount.Value = 0
+	
+	local lockedOn = Instance.new("BoolValue")
+	lockedOn.Parent = player
+	lockedOn.Name = "lockedOn"
+	
+	local sepCam = Instance.new("BoolValue")
+	sepCam.Parent = player
+	sepCam.Name = "sepCam"
+	sepCam = true
+	
+	local isJedi = Instance.new("BoolValue")
+	isJedi.Parent = player
+	isJedi.Name = "isJedi"
+	
+	local isSith = Instance.new("BoolValue")
+	isSith.Parent = player
+	isSith.Name = "isSith"
+	
+	local division = Instance.new("NumberValue")
+	division.Parent = player
+	division.Name = "Division"
+	
+	local cloaked = Instance.new("BoolValue")
+	cloaked.Parent = player
+	cloaked.Name = "isCloaked"
+	
+	local affiliation = Instance.new("StringValue")
+	affiliation.Parent = player
+	affiliation.Name = "Affiliation"
+	affiliation.Value = ""
+	
+	local corps = Instance.new("StringValue")
+	corps.Parent = player
+	corps.Name = "Corps"
+	corps.Value = ""
+	
+	local rank = Instance.new("StringValue")
+	rank.Name = "Rank"
+	rank.Parent = player
+	
+	local divRank = Instance.new("StringValue")
+	divRank.Name = "DivRank"
+	divRank.Parent = player
+	
+	local Wanted = Instance.new("BoolValue")
+	Wanted.Name = "Wanted"
+	Wanted.Parent = player
+	Wanted.Value = false
+	
+	local sentence = Instance.new("IntValue")
+	sentence.Name = "Sentence"
+	sentence.Parent = player
+	sentence.Value = 0
+	
+	local KOS = Instance.new("BoolValue")
+	KOS.Name = "KOS"
+	KOS.Parent = player
+	KOS.Value = false
+
+  local inCombat = Instance.new("BoolValue")
+	inCombat.Name = "inCombat"
+	inCombat.Parent = player
+	inCombat.Value = false
+	
+	local stunMult = Instance.new("NumberValue")
+	stunMult.Name = "stunMult"
+	stunMult.Parent = player
+	stunMult.Value = 1
+	
+	local stunStamina = Instance.new("NumberValue")
+	stunStamina.Parent = player
+	stunStamina.Name = "StunHealth"
+	stunStamina.Value = 100
+	
+	local Force = Instance.new("NumberValue")
+	Force.Parent = player
+	Force.Name = "Force"
+	Force.Value = 100
+	
+	local Stamina = Instance.new("NumberValue")
+	Stamina.Parent = player
+	Stamina.Name = "Stamina"
+	Stamina.Value = 100
+	
+	local DefenseStamina = Instance.new("NumberValue")
+	DefenseStamina.Parent = player
+	DefenseStamina.Name = "DefStamina"
+	DefenseStamina.Value = 100
+	
+	local attacking = Instance.new("BoolValue")
+	attacking.Parent = player
+	attacking.Name = "Attacking"
+	attacking.Value = false
+	
+	local blocking = Instance.new("BoolValue")
+	blocking.Parent = player
+	blocking.Name = "isBlocking"
+	blocking.Value = false
+	
+	local aiming = Instance.new("BoolValue")
+	aiming.Parent = player
+	aiming.Name = "isAiming"
+	aiming.Value = false
+	
+	local shooting = Instance.new("BoolValue")
+	shooting.Parent = player
+	shooting.Name = "isShooting"
+	shooting.Value = false
+	
+	local canBlock = Instance.new("BoolValue")
+	canBlock.Parent = player
+	canBlock.Name = "canBlock"
+	canBlock.Value = true
+	
+	local parrying = Instance.new("BoolValue")
+	parrying.Parent = player
+	parrying.Name = "isParrying"
+	parrying.Value = false
+	
+	local isCuffed = Instance.new("BoolValue")
+	isCuffed.Parent = player
+	isCuffed.Name = "isCuffed"
+	isCuffed.Value = false
+	
+	local weapon = Instance.new("StringValue")
+	weapon.Parent = player
+	weapon.Name = "Weapon"
+	
+	local sniperSens = Instance.new("NumberValue")
+	sniperSens.Parent = player
+	sniperSens.Name = "sniperSens"
+	sniperSens.Value = 0.5
+
+  local SwapShoulders = Instance.new("StringValue")
+	SwapShoulders.Parent = Binds
+	SwapShoulders.Name = "swapShoulders"
+	SwapShoulders.Value = "C"
+	
+	local Dash = Instance.new("StringValue")
+	Dash.Parent = Binds
+	Dash.Name = "Dash"
+	Dash.Value = "E"
+	
+	local forceAttack = Instance.new("StringValue")
+	forceAttack.Parent = Binds
+	forceAttack.Name = "forceAttack"
+	forceAttack.Value = "F"
+	
+	local lockOn = Instance.new("StringValue")
+	lockOn.Parent = Binds
+	lockOn.Name = "lockOn"
+	lockOn.Value = "G"
+	
+	local openInv = Instance.new("StringValue")
+	openInv.Name = "openInv"
+	openInv.Value = "Tab"
+	openInv.Parent = Binds
+	
+	local sprint = Instance.new("StringValue")
+	sprint.Name = "Sprint"
+	sprint.Value = "LeftShift"
+	sprint.Parent = Binds
+	
+	local crouch = Instance.new("StringValue")
+	crouch.Name = "Crouch"
+	crouch.Value = "LeftControl"
+	crouch.Parent = Binds
+	
+	local useStim = Instance.new("StringValue")
+	useStim.Name = "useStim"
+	useStim.Value = "Q"
+	useStim.Parent = Binds
+	
+	local toggleView = Instance.new("StringValue")
+	toggleView.Name = "toggleView"
+	toggleView.Value = "V"
+	toggleView.Parent = Binds
+	
+	local toggleRadio = Instance.new("StringValue")
+	toggleRadio.Name = "toggleRadio"
+	toggleRadio.Value = "T"
+	toggleRadio.Parent = Binds
+	
+	local reload = Instance.new("StringValue")
+	reload.Name = "Reload"
+	reload.Value = "R"
+	reload.Parent = Binds
+	
+	local toggleAcc = Instance.new("StringValue")
+	toggleAcc.Name = "toggleAcc"
+	toggleAcc.Value = "X"
+	toggleAcc.Parent = Binds
+	
+	local cinematic = Instance.new("StringValue")
+	cinematic.Name = "toggleCin"
+	cinematic.Value = "P"
+	cinematic.Parent = Binds
+	
+	local Settings = Instance.new("StringValue")
+	Settings.Name = "toggleSett"
+	Settings.Value = "M"
+	Settings.Parent = Binds
+	
+	local divAbility = Instance.new("StringValue")
+	divAbility.Name = "divAbility"
+	divAbility.Value = "G"
+	divAbility.Parent = Binds
+	
+	local playerList = Instance.new("StringValue")
+	playerList.Name = "plrList"
+	playerList.Value = "B"
+	playerList.Parent = Binds
+
+  local riposte = Instance.new("BoolValue")
+	riposte.Name = "Riposte"
+	riposte.Value = false
+	riposte.Parent = player
+	
+	local form = Instance.new("IntValue")
+	form.Name = "Form"
+	form.Parent = player
+	form.Value = 1
+
+	local firstPerson = Instance.new("BoolValue")
+	firstPerson.Parent = player
+	firstPerson.Name = "FirstPerson"
+	firstPerson.Value = false
+	
+	local isSprinting = Instance.new("BoolValue")
+	isSprinting.Parent = player
+	isSprinting.Name = "isSprinting"
+	isSprinting.Value = false
+	
+	local isRolling = Instance.new("BoolValue")
+	isRolling.Parent = player
+	isRolling.Name = "isRolling"
+	isRolling.Value = false
+	
+	local isReloading = Instance.new("BoolValue")
+	isReloading.Parent = player
+	isReloading.Name = "isReloading"
+	isReloading.Value = false
+	
+	local equipping = Instance.new("BoolValue")
+	equipping.Parent = player
+	equipping.Name = "isEquipping"
+	equipping.Value = false
+	
+	local inSquad = Instance.new("BoolValue")
+	inSquad.Name = "inSquad"
+	inSquad.Parent = player
+	
+	local squadID = Instance.new("IntValue")
+	squadID.Name = "squadID"
+	squadID.Parent = player
+	squadID.Value = 0
+	
+	local bounty = Instance.new("NumberValue")
+	bounty.Name = "Bounty"
+	bounty.Parent = player
+	bounty.Value = 0
+	
+	local inCover = Instance.new("BoolValue")
+	inCover.Parent = player
+	inCover.Name = "inCover"
+
+	local LAmmo = Instance.new("NumberValue")
+	LAmmo.Name = "LightAmmo"
+	LAmmo.Parent = Ammo
+	LAmmo.Value = 70
+	
+	local MAmmo = Instance.new("NumberValue")
+	MAmmo.Name = "MediumAmmo"
+	MAmmo.Parent = Ammo
+	MAmmo.Value = 70
+	
+	local HAmmo = Instance.new("NumberValue")
+	HAmmo.Name = "HeavyAmmo"
+	HAmmo.Parent = Ammo
+	HAmmo.Value = 70
+	
+	local SAmmo = Instance.new("NumberValue")
+	SAmmo.Name = "SniperAmmo"
+	SAmmo.Parent = Ammo
+	SAmmo.Value = 70
+	
+	local TAmmo = Instance.new("NumberValue")
+	TAmmo.Name = "TaserAmmo"
+	TAmmo.Parent = Ammo
+	TAmmo.Value = 70
